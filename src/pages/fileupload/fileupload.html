@@ -1,0 +1,26 @@
+<ion-header>
+   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>File Upload</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+ <img src="{{base64Img}}" style="width: 100%">
+ 
+</ion-content>
+  
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button icon-left (click)="openFile()">
+        <ion-icon name="cloud-upload"></ion-icon>Open File Explorar
+      </button>
+       <button ion-button icon-right (click)="openCamera()">
+        <ion-icon name="camera"></ion-icon>Camera 
+      </button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="registerForm(info)">
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="info.name" name="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Address</ion-label>
+        <ion-textarea [(ngModel)]="info.address" name="address"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date Of Birth</ion-label>
+        <ion-input type="date" [(ngModel)]="info.dob" name="dateofbirth"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mobile No</ion-label>
+        <ion-input type="text" [(ngModel)]="info.mobileNo1" name="mobileno"></ion-input>
+
+        
+      </ion-item>
+      <ion-item>
+        
+        <button ion-button color="secondary" type="button" (click)="addMobileNo()"> + </button>
+      </ion-item>
+     <ion-item *ngIf="mbileNoCnt>=1">
+        <ion-label>Mobile No2</ion-label>
+        <ion-input type="text" [(ngModel)]="info.mobileNo2" name="mobileno"></ion-input>
+        
+      </ion-item> 
+      <div class="row" padding>
+       <button ion-button block type="submit" class="col col-50" style="margin-right:10px">Submit</button>
+       <button ion-button block type="reset" class="col col-50">Reset</button>
+     </div>
+    </form>
+    <ion-list >
+    <div ion-item *ngFor="let inf of infoList">
+      
+      <ion-item>{{inf.fullName}}</ion-item>
+      <ion-item>{{inf.Address}}</ion-item>
+      <ion-item>{{inf.dateofbirth}}</ion-item>
+      <ion-item>{{inf.mobileNo}}</ion-item>
+      
+    </div>
+  </ion-list>
+</ion-content>
